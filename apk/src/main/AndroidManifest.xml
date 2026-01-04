@@ -5,7 +5,7 @@
         android:theme="@android:style/Theme.DeviceDefault">
 
         <activity
-            android:name="pl.czak.minimal.MainActivity"
+            android:name="com.kswarrior.ai.MainActivity"
             android:exported="true">
 
             <intent-filter>
