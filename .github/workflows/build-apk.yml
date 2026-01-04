@@ -43,7 +43,7 @@ jobs:
       - name: Prepare APK
         run: |
           mkdir -p release
-          cp apk/build/outputs/apk/debug/*.apk release/KS-AI.apk
+          cp apk/build/outputs/apk/debug/*.apk release/𝑲𝑺-𝑨𝑰.apk
 
       - name: Upload to GitHub Release
         if: always()
