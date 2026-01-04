@@ -1,12 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kswarrior.ai">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:label="KS AI"
+        android:icon="@drawable/logo"          <!-- Your logo as app icon -->
+        android:roundIcon="@drawable/logo"    <!-- Round icon for modern devices -->
         android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
 
+        <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -17,4 +21,5 @@
         </activity>
 
     </application>
+
 </manifest>
