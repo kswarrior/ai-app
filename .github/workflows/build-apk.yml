@@ -23,10 +23,12 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Gradle 8.7
+      - name: Install Gradle 8.7 (MANUAL)
         run: |
-          sudo apt update
-          sudo apt install -y gradle
+          wget https://services.gradle.org/distributions/gradle-8.7-bin.zip
+          unzip gradle-8.7-bin.zip
+          sudo mv gradle-8.7 /opt/gradle
+          sudo ln -s /opt/gradle/bin/gradle /usr/bin/gradle
           gradle --version
 
       - name: Accept Android licenses
