@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Java 17
@@ -37,14 +37,16 @@ jobs:
         working-directory: apk
         run: gradle assembleDebug
 
-      - name: Collect APK
+      - name: Prepare APK
         run: |
           mkdir -p release
           cp apk/build/outputs/apk/debug/*.apk release/KS-AI.apk
 
-      - name: Upload APK to GitHub Releases
+      - name: Create GitHub Release & Upload APK
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: KS AI Build v1.0.${{ github.run_number }}
           files: release/KS-AI.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
